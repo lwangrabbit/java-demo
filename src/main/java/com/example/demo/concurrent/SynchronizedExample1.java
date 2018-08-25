@@ -17,18 +17,27 @@ public class SynchronizedExample1 {
         }
     }
 
+    //修饰一个类
     public void test1_2() {
         synchronized(this.getClass()) {
             for (int i = 0; i < 10; i++) {
-                log.info("test1 - {}", i);
+                log.info("test1——2 - {}", i);
             }
         }
     }
 
-    //修改一个方法
+    //修饰一个方法
     public synchronized void test2() {
         for (int i = 0; i < 10; i++) {
-            log.info("test1 - {}", i);
+            log.info("test2 - {}", i);
+        }
+    }
+
+
+    //修饰一个静态方法
+    public synchronized void test3() {
+        for (int i = 0; i < 10; i++) {
+            log.info("test3 - {}", i);
         }
     }
 
