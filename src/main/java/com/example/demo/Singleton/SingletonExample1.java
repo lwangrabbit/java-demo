@@ -1,27 +1,22 @@
 package com.example.demo.Singleton;
 
-import lombok.extern.slf4j.Slf4j;
+import com.example.demo.annotation.NotThreadSafe;
 
-@Slf4j
+/**
+ * 懒汉模式
+ * 单例实例在第一次使用的时候初始化
+ */
+@NotThreadSafe
 public class SingletonExample1 {
-
     private SingletonExample1() {
 
     }
 
-    private volatile static SingletonExample1 instance = null;
+    private static SingletonExample1 instance = null;
 
-    //why volatile, prevent cpu reorder to 1-3-2
-    //1. allocate memory
-    //2. ctor Instance
-    //3. instance = memory
-    public static SingletonExample1 getInstance() {
-        if(instance == null) {                              //B
-            synchronized (SingletonExample1.class) {
-                if(instance == null) {
-                    instance = new SingletonExample1();     //A-3
-                }
-            }
+    public SingletonExample1 getInstance() {
+        if(instance == null) {
+            instance = new SingletonExample1();
         }
         return instance;
     }
