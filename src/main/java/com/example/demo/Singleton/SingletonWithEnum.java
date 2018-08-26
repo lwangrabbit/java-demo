@@ -4,6 +4,7 @@ import com.example.demo.annotation.Recommend;
 import com.example.demo.annotation.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
+
 /**
  * 枚举模式，最安全
  */
