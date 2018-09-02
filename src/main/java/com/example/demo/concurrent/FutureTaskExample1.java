@@ -1,7 +1,6 @@
 package com.example.demo.concurrent;
 
 import lombok.extern.slf4j.Slf4j;
-import org.omg.PortableServer.THREAD_POLICY_ID;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;

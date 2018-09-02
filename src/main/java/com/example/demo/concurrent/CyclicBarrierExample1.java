@@ -12,7 +12,9 @@ class CyclicBarrierExample1 {
 
     private final static int threadCount = 10;
 
-    private final static CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+    private final static CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> {
+        log.info("begin to start");
+    });
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
