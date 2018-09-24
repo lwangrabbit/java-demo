@@ -38,5 +38,5 @@ public class MysqlJdbcExample1 {
             if(connection != null) connection.close();
         }
     }
-    
+
 }
